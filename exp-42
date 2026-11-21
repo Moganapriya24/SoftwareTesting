@@ -1,0 +1,45 @@
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CheckboxRadioTest {
+
+    @Test
+    void selectCheckbox() {
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://the-internet.herokuapp.com/checkboxes");
+
+        WebElement checkbox = driver.findElement(
+            By.xpath("(//input[@type='checkbox'])[1]"));
+
+        if (!checkbox.isSelected()) {
+            checkbox.click();
+        }
+
+        assertTrue(checkbox.isSelected());
+
+        driver.quit();
+    }
+
+    @Test
+    void selectRadioButton() {
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://demoqa.com/radio-button");
+
+        WebElement radio = driver.findElement(
+            By.id("yesRadio"));
+
+        driver.findElement(
+            By.xpath("//label[@for='yesRadio']")).click();
+
+        assertTrue(radio.isSelected());
+
+        driver.quit();
+    }
+}

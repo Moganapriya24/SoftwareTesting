@@ -1,0 +1,13 @@
+Thread Group:
+Users: 50
+Ramp-up: 30
+Loop Count: 10
+
+HTTP Cookie Manager: Enabled
+
+Requests:
+1. Login
+2. Browse Products
+3. Add to Cart
+4. View Cart
+5. Logout

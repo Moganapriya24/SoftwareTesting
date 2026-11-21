@@ -1,0 +1,34 @@
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class InvalidLoginTest {
+
+    @Test
+    void invalidLogin() {
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://example.com/login");
+
+        driver.findElement(By.id("username"))
+              .sendKeys("wronguser");
+
+        driver.findElement(By.id("password"))
+              .sendKeys("wrongpassword");
+
+        driver.findElement(By.id("login"))
+              .click();
+
+        String error = driver.findElement(
+            By.id("errorMessage")).getText();
+
+        assertTrue(error.contains("Invalid"));
+
+        System.out.println("Error: " + error);
+
+        driver.quit();
+    }
+}

@@ -1,0 +1,38 @@
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import java.io.File;
+
+public class FileUploadTest {
+
+    @Test
+    void fileUpload() {
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://the-internet.herokuapp.com/upload");
+
+        File file = new File("sample.txt");
+
+        if (!file.exists()) {
+            throw new RuntimeException("sample.txt not found");
+        }
+
+        driver.findElement(By.id("file-upload"))
+              .sendKeys(file.getAbsolutePath());
+
+        driver.findElement(By.id("file-submit"))
+              .click();
+
+        String result = driver.findElement(
+            By.id("uploaded-files")).getText();
+
+        assertEquals("sample.txt", result);
+
+        System.out.println("File Uploaded Successfully");
+
+        driver.quit();
+    }
+}

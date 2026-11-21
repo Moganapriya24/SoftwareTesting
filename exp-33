@@ -1,0 +1,18 @@
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class VotingEligibilityTest {
+
+    boolean eligible(int age) {
+        return age >= 18;
+    }
+
+    @Test
+    void testVoting() {
+        assertTrue(eligible(18));
+        assertTrue(eligible(25));
+        assertFalse(eligible(17));
+        assertFalse(eligible(10));
+    }
+}

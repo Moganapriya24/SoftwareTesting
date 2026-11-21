@@ -1,0 +1,29 @@
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class GoogleSearchTest {
+
+    @Test
+    void googleSearch() {
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://www.google.com");
+
+        WebElement search = driver.findElement(
+            By.name("q"));
+
+        search.sendKeys("Software Testing");
+        search.submit();
+
+        assertTrue(driver.getTitle().contains("Software Testing"));
+
+        System.out.println("Google Search Successful");
+
+        driver.quit();
+    }
+}

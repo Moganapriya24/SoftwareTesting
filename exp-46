@@ -1,0 +1,4 @@
+Protocol: https
+Server: YOUR_ARMS_HOST
+Path: /
+Method: GET

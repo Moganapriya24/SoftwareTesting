@@ -1,0 +1,28 @@
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class SimpleInterestTest {
+
+    double calculate(double p, int t, String type) {
+        double rate;
+
+        if (type.equalsIgnoreCase("Senior"))
+            rate = 6;
+        else if (type.equalsIgnoreCase("Regular"))
+            rate = 5;
+        else
+            throw new IllegalArgumentException("Invalid customer type");
+
+        return (p * rate * t) / 100;
+    }
+
+    @Test
+    void testInterest() {
+        assertEquals(500, calculate(10000, 1, "Regular"), 0.01);
+        assertEquals(600, calculate(10000, 1, "Senior"), 0.01);
+
+        assertThrows(IllegalArgumentException.class,
+            () -> calculate(10000, 1, "Other"));
+    }
+}

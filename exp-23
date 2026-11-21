@@ -1,0 +1,24 @@
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class SumOfDigitsTest {
+
+    int sumDigits(int n) {
+        n = Math.abs(n);
+        int sum = 0;
+
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+
+    @Test
+    void testSum() {
+        assertEquals(6, sumDigits(123));
+        assertEquals(15, sumDigits(456));
+        assertEquals(0, sumDigits(0));
+    }
+}

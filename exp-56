@@ -1,0 +1,15 @@
+Test Users:
+100
+200
+300
+400
+500
+
+Ramp-up: 60 seconds
+Method: GET
+Path: /
+
+Measure:
+1. Response Time
+2. Throughput
+3. Error Percentage

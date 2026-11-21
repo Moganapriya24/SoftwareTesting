@@ -1,0 +1,13 @@
+Thread Group:
+Users: 200
+Ramp-up: 60
+Loop Count: 10
+
+HTTP Request:
+Method: GET
+Path: /api/weather?city=Chennai
+
+Headers:
+Accept: application/json
+
+Expected Status: 200

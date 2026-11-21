@@ -1,0 +1,11 @@
+Thread Group:
+Users: 100
+Ramp-up: 60
+Loop Count: 5
+
+Test Sequence:
+1. Login
+2. Browse Products
+3. Add to Cart
+4. Checkout
+5. Logout

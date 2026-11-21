@@ -1,0 +1,13 @@
+Thread Group:
+Users: 50
+Ramp-up: 60
+Loop Count: 5
+
+HTTP Request:
+Method: POST
+Path: /upload
+
+File Upload:
+Filename: sample.pdf
+Parameter Name: file
+MIME Type: application/pdf

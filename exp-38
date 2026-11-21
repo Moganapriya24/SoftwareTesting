@@ -1,0 +1,32 @@
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class RegistrationTest {
+
+    @Test
+    void registration() {
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://example.com/register");
+
+        driver.findElement(By.id("name"))
+              .sendKeys("Sarumathi");
+
+        driver.findElement(By.id("email"))
+              .sendKeys("saru@example.com");
+
+        driver.findElement(By.id("password"))
+              .sendKeys("Test@123");
+
+        driver.findElement(By.id("submit"))
+              .click();
+
+        assertTrue(driver.getCurrentUrl().contains("success"));
+
+        driver.quit();
+    }
+}

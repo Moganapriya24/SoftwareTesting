@@ -1,0 +1,17 @@
+Thread Group:
+Users: 100
+Ramp-up: 60
+Loop Count: 3
+
+HTTP Request:
+Method: POST
+Path: /api/register
+
+Content-Type: application/json
+
+Body:
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "Test@123"
+}

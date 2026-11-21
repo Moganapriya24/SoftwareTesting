@@ -1,0 +1,8 @@
+Thread Group:
+Users: 100
+Ramp-up: 60
+Loop Count: 10
+
+HTTP Request:
+Method: GET
+Path: /search?q=test

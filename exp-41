@@ -1,0 +1,27 @@
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class DropdownTest {
+
+    @Test
+    void dropdownSelection() {
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://the-internet.herokuapp.com/dropdown");
+
+        Select dropdown = new Select(
+            driver.findElement(By.id("dropdown")));
+
+        dropdown.selectByVisibleText("Option 1");
+
+        assertEquals("Option 1",
+            dropdown.getFirstSelectedOption().getText());
+
+        driver.quit();
+    }
+}

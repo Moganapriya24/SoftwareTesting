@@ -1,0 +1,8 @@
+Thread Group:
+Users: 50
+Ramp-up: 120
+Duration: 1800 seconds
+
+HTTP Request:
+Method: GET
+Path: /health

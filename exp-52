@@ -1,0 +1,11 @@
+Thread Group:
+Users: 100
+Ramp-up: 60
+Loop Count: 10
+
+HTTP Request:
+Method: GET
+Path: /api/payment/status
+
+Header:
+Authorization: Bearer YOUR_TEST_TOKEN

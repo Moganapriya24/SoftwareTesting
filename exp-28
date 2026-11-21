@@ -1,0 +1,30 @@
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class ArmstrongTest {
+
+    boolean isArmstrong(int n) {
+        if (n < 0) return false;
+
+        int original = n;
+        int digits = String.valueOf(n).length();
+        int sum = 0;
+
+        do {
+            int digit = n % 10;
+            sum += (int) Math.pow(digit, digits);
+            n /= 10;
+        } while (n > 0);
+
+        return sum == original;
+    }
+
+    @Test
+    void testArmstrong() {
+        assertTrue(isArmstrong(153));
+        assertTrue(isArmstrong(370));
+        assertTrue(isArmstrong(9474));
+        assertFalse(isArmstrong(123));
+    }
+}

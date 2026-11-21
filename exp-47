@@ -1,0 +1,14 @@
+Thread Group:
+Number of Users: 100
+Ramp-up Period: 60
+Loop Count: 5
+
+HTTP Request:
+Method: GET
+Path: /api/balance
+
+Headers:
+Authorization: Bearer YOUR_TEST_TOKEN
+Accept: application/json
+
+Expected Status: 200

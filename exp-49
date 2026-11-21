@@ -1,0 +1,12 @@
+Thread Group:
+Users: 300
+Ramp-up: 90
+Loop Count: 2
+
+HTTP Request:
+Method: POST
+Path: /login
+
+Parameters:
+username = ${username}
+password = ${password}

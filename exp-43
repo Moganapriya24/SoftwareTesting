@@ -1,0 +1,32 @@
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.Alert;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class AlertTest {
+
+    @Test
+    void handleAlert() {
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+
+        driver.findElement(
+            By.xpath("//button[text()='Click for JS Alert']"))
+            .click();
+
+        Alert alert = driver.switchTo().alert();
+
+        assertEquals("I am a JS Alert", alert.getText());
+
+        alert.accept();
+
+        assertTrue(driver.findElement(By.id("result"))
+            .getText().contains("You successfully clicked an alert"));
+
+        driver.quit();
+    }
+}

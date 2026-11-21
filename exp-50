@@ -1,0 +1,13 @@
+Thread Group:
+Users: 100
+Ramp-up: 60
+Loop Count: 2
+
+HTTP Requests:
+1. Homepage
+2. Login Page
+3. Services Page
+
+Method: GET
+
+Expected Status: 200
